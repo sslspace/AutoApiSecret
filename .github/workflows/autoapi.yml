@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: '12 */6 * * *'
+    - cron: '0 1 * * *'
   watch:
     types: [started]
    
@@ -38,7 +38,7 @@ jobs:
         echo $CONFIG_KEY > configkey.txt
         sed -i '10 r configid.txt' 2.py
         sed -i '12 r configkey.txt' 2.py
-    - name: Test Api #Api调用
+    - name: Run Api #Api调用
       run: | 
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
         python 2.py
